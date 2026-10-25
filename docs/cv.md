@@ -29,7 +29,7 @@ Ingénieur IT depuis plus de 30 ans, entre systèmes, automatisation et audio.
 
 ## Réalisations récentes
 
-- **MIDI Studio** : plateforme d’éditeurs matériel en navigateur ; BCR32, FireworX et Mx000 publiés en alpha, X5DR et CS12 en test.
+- **MIDI Studio** : plateforme d’éditeurs matériel en navigateur ; BCR32, FireworX, Mx000 et AI² Studio (Korg X5DR et famille AI²) publiés en alpha, CS12 en test.
 - **Plume** : traitement de texte Markdown natif en Rust/WebAssembly.
 - **Forgejo MCP** : serveur MCP sécurisé avec permissions fines et journal d’audit.
 - **Synology Office Exporter builds** : CI/CD de packaging pour Synology.

@@ -18,7 +18,7 @@ hero:
 features:
   - icon: 🎛️
     title: MIDI Studio
-    details: "A platform of 100% in-browser editors (Web MIDI + SysEx): BCR32, FireworX, M3000/M2000, and soon X5DR and CS12. Nothing to install, no account."
+    details: "A platform of 100% in-browser editors (Web MIDI + SysEx): BCR32, FireworX, M3000/M2000 and now the whole Korg AI² family with the X5DR; CS12 in testing. Nothing to install, no account."
   - icon: ✍️
     title: Plume
     details: A word processor that feels like Word but saves clean Markdown, versioned with Git. Written in Rust.

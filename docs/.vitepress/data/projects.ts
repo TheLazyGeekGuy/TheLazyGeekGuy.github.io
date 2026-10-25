@@ -52,12 +52,13 @@ export const projects: Project[] = [
     link: 'https://thelazygeekguy.github.io/Mx000-studio/', repo: 'https://github.com/TheLazyGeekGuy/Mx000-studio',
   },
   {
-    slug: 'x5dr', name: 'X5DR Studio', accent: '#22d3ee', unit: 'X5DR',
-    family: 'MIDI Studio', status: 'testing', image: '/shots/x5dr.png',
+    slug: 'ai2-studio', name: 'AI² Studio', accent: '#22d3ee', unit: 'AI²',
+    family: 'MIDI Studio', status: 'alpha', image: '/shots/ai2-studio.jpg', shots: ['/shots/ai2-studio-multi.jpg'],
     tagline: {
-      fr: 'Éditeur du module Korg X5DR et de sa synthèse AI2 : programmes, combis, façade fidèle, librairie de patches.',
-      en: 'Editor for the Korg X5DR module and its AI2 synthesis: programs, combis, faithful front panel, patch library.',
+      fr: 'Éditeur de la synthèse Korg AI² : X5DR en direct par MIDI (Program, Combi, Multi, Drums, Global) et 20 autres modèles en fichiers, conversions entre modèles, librairie.',
+      en: 'Editor for Korg AI² synthesis: the X5DR live over MIDI (Program, Combi, Multi, Drums, Global) and 20 more models as files, conversions between models, library.',
     },
+    link: 'https://thelazygeekguy.github.io/ai2-studio/', repo: 'https://github.com/TheLazyGeekGuy/ai2-studio',
   },
   {
     slug: 'cs12', name: 'CS12 Editor', accent: '#818cf8', unit: 'CS12',

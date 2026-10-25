@@ -9,6 +9,8 @@ aside: false
 
 A family of in-browser hardware editors sharing the same foundation: themes, languages, local history, MIDI monitor, preset library. No backend, no analytics: everything stays in your browser until you export it.
 
+[All about MIDI Studio: the foundation, the modules, what's new →](/en/midi-studio)
+
 <ProjectGrid family="MIDI Studio" />
 
 ## ✍️ Writing

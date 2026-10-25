@@ -18,7 +18,7 @@ hero:
 features:
   - icon: 🎛️
     title: MIDI Studio
-    details: "Une plateforme d’éditeurs 100 % navigateur (Web MIDI + SysEx) : BCR32, FireworX, M3000/M2000, et bientôt X5DR et CS12. Rien à installer, pas de compte."
+    details: "Une plateforme d’éditeurs 100 % navigateur (Web MIDI + SysEx) : BCR32, FireworX, M3000/M2000 et maintenant toute la famille Korg AI² avec le X5DR ; CS12 en test. Rien à installer, pas de compte."
   - icon: ✍️
     title: Plume
     details: Un traitement de texte qui s’utilise comme Word mais enregistre du Markdown propre, versionné avec Git. Écrit en Rust.

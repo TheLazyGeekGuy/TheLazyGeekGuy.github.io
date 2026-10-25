@@ -29,7 +29,7 @@ IT engineer for over 30 years, between systems, automation and audio.
 
 ## Recent work
 
-- **MIDI Studio** : a platform of in-browser hardware editors; BCR32, FireworX and Mx000 in public alpha, X5DR and CS12 in testing.
+- **MIDI Studio** : a platform of in-browser hardware editors; BCR32, FireworX, Mx000 and AI² Studio (Korg X5DR and the AI² family) in public alpha, CS12 in testing.
 - **Plume** : Markdown-native word processor in Rust/WebAssembly.
 - **Forgejo MCP** : secure MCP server with fine-grained permissions and an audit log.
 - **Synology Office Exporter builds** : packaging CI/CD for Synology.
