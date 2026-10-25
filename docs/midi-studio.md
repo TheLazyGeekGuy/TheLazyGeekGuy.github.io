@@ -32,20 +32,108 @@ Chaque éditeur hérite des mêmes outils :
 
 ## Les modules
 
-| Module | Matériel | Statut | Liens |
+**24 éditeurs répartis en 11 familles.** Le catalogue normal ne montre que les éditeurs qualifiés. Ajoutez `?beta=1` à l'adresse pour faire apparaître les éditeurs en bêta et en développement, avec un badge. Ce réglage n'est jamais mémorisé.
+
+| Famille | Modèles | Disponibilité | Liens |
 | --- | --- | --- | --- |
-| **BCR32 Studio** | Behringer BCR32 | Alpha publique | [Ouvrir](https://thelazygeekguy.github.io/bcr32-studio/) · [Code](https://github.com/TheLazyGeekGuy/bcr32-studio) |
-| **FireworX Studio** | TC Electronic FireworX | Alpha publique | [Ouvrir](https://thelazygeekguy.github.io/fireworx-studio/) · [Code](https://github.com/TheLazyGeekGuy/fireworx-studio) |
-| **Mx000 Studio** | TC Electronic M3000 / M2000 | Alpha publique | [Ouvrir](https://thelazygeekguy.github.io/Mx000-studio/) · [Code](https://github.com/TheLazyGeekGuy/Mx000-studio) |
-| **AI² Studio** — *nouveau* | Korg X5DR + 20 modèles de la famille AI² | Alpha publique | [Ouvrir](https://thelazygeekguy.github.io/ai2-studio/) · [Code](https://github.com/TheLazyGeekGuy/ai2-studio) |
-| X-TOUCH ONE | Behringer X-TOUCH ONE | Dans l'atelier | — |
-| CS12 Editor | Surface de contrôle CS12 | En test | — |
+| **BCR32 Studio** | Behringer BCR32 | Catalogue · appli autonome | [Ouvrir](https://thelazygeekguy.github.io/bcr32-studio/) · [Code](https://github.com/TheLazyGeekGuy/bcr32-studio) |
+| **B-Control** | Behringer BCR2000, BCF2000 | Bêta | — |
+| **X-TOUCH ONE** | Behringer X-TOUCH ONE | Catalogue | — |
+| **X-TOUCH** | X-TOUCH MINI, X-TOUCH COMPACT, X-TOUCH, X-TOUCH EXTENDER | Bêta | — |
+| **Access Virus** | Virus A, B, C, Classic, Rack, Rack XL | Bêta | — |
+| **Novation Nova** | Nova Desktop, Nova II Keyboard, Supernova, Supernova II | Bêta | — |
+| **Roland JP** | JP-8000, JP-8080 | Bêta | — |
+| **AI² Studio** — *nouveau* | Korg X5DR + 20 modèles de la famille AI² | Catalogue · appli autonome | [Ouvrir](https://thelazygeekguy.github.io/ai2-studio/) · [Code](https://github.com/TheLazyGeekGuy/ai2-studio) |
+| **FireworX Studio** | TC Electronic FireworX | Catalogue · appli autonome | [Ouvrir](https://thelazygeekguy.github.io/fireworx-studio/) · [Code](https://github.com/TheLazyGeekGuy/fireworx-studio) |
+| **Mx000 Studio** | TC Electronic M3000 / M2000 | Catalogue · appli autonome | [Ouvrir](https://thelazygeekguy.github.io/Mx000-studio/) · [Code](https://github.com/TheLazyGeekGuy/Mx000-studio) |
+| **Panorama CS12** | Nektar Panorama CS12 | En développement | — |
 
-D'autres éditeurs sont en développement dans l'atelier (BCR2000, BCF2000, famille X-TOUCH, Access Virus, Novation Nova, Roland JP-8000) et n'apparaissent qu'en mode bêta.
+« Catalogue » veut dire qualifié pour l'atelier, pas terminé : tout reste en alpha. Rien n'a encore été vérifié sur un vrai BCR2000, BCF2000, Virus, Nova, JP ou sur les X-TOUCH autres que le ONE.
 
-- **BCR32 Studio** : façade live, assignations, MIDI Learn, impression des fiches de façade, export d'une surface Cubase MIDI Remote, vue séquenceur en aperçu.
-- **FireworX Studio** : chaîne d'effets en grille, matrice de modulation, coût DSP estimé, banques et variations aléatoires.
-- **Mx000 Studio** : édition live du M3000 par SysEx (lecture, rappel, envoi du preset dans le buffer, mémoire utilisateur après confirmation) et édition hors ligne du M2000, copie d'un appareil à l'autre.
+### BCR32 Studio — Behringer BCR32
+
+- Façade détaillée avec l'écran OLED, contrôle en direct en CC / NRPN (14 bits, modes relatifs).
+- Luminosité des LED écrite dans l'appareil puis relue ; lecture du firmware et des réglages globaux (l'écriture des globaux est désactivée par sécurité).
+- Import de l'export binaire du contrôleur, fiches de façade à imprimer en PDF, export d'une surface pour Cubase MIDI Remote, 8 langues, thèmes, zoom.
+- Pas encore : le séquenceur, et l'envoi en direct des autres types d'assignation (gardés en local).
+
+### B-Control — Behringer BCR2000 et BCF2000
+
+![Éditeur BCR2000 : encodeurs, anneaux LED et inspecteur](/shots/ms-bcr2000.jpg)
+
+- BCR2000 : 32 encodeurs à poussoir en 4 groupes, 24 encodeurs du bas, touches, 2 pédales. BCF2000 : 8 encodeurs, 8 faders motorisés, pédale d'expression. 32 presets chacun.
+- Contrôle en direct : CC / NRPN (absolu 7 / 14 bits et six modes relatifs), Note, Program Change, Pitch Bend, Aftertouch, GS / XG. Le MIDI reçu met l'écran à jour.
+- **Lecture SysEx** du preset courant, d'un emplacement choisi, des noms de presets, du réglage global ou d'un instantané MIDI.
+- Fichiers **BCL** (.bcr / .bcf / .txt ou .syx) en import et export, projet JSON, librairie, brouillons, annuler / rétablir, avec un rapport de ce qui n'a pas pu être converti.
+- Formulaires BCL complets, sélection multiple au rectangle, édition par lot, 12 styles d'anneaux LED affichés.
+- Pas encore : l'écriture dans l'appareil depuis l'interface.
+
+### X-TOUCH ONE — Behringer
+
+![Éditeur X-TOUCH ONE : fader motorisé, molette et inspecteur](/shots/ms-xtouch-one.jpg)
+
+- Contrôle MCU en direct : touches, encodeur, fader motorisé, molette jog. Le fader ne se recale qu'au relâchement du doigt, jamais pendant qu'on le touche.
+- Noms de paramètres affichés sur l'écran du contrôleur, LED et anneaux pilotés automatiquement.
+- Calques pour **14 modes matériels** (MC Std / Live / Cubase / Logic / Studio One / Reaper / Tracktion / User, HUI, MIDI / CC). Le mode auto reconnaît la famille de messages reçue (MCU ou MIDI).
+- Calibration de la molette en un tour, MIDI Learn local, dernier message reçu dans l'inspecteur.
+- Pas encore : le décodage HUI en entrée, la reprogrammation des assignations internes.
+
+### Famille X-TOUCH — MINI, COMPACT, X-TOUCH, EXTENDER
+
+![Éditeur X-TOUCH COMPACT : façade réaliste, lecture expérimentale des couches A / B](/shots/ms-xtouch-compact.jpg)
+
+- Façades réalistes. Modes Standard A / B et MCU (MINI, COMPACT), MCU et MIDI (X-TOUCH), MCU / CTRL / CTRL REL (EXTENDER).
+- Retour visuel en direct : LED, anneaux, VU-mètres, afficheur timecode. Les faders motorisés ne bougent que si on l'active.
+- Texte et couleurs des écrans LCD sur le X-TOUCH et l'EXTENDER.
+- **MINI et COMPACT : lecture expérimentale** de l'appareil (infos, couches A / B), sauvegarde brute et suivi de la couche active. **COMPACT : fichiers de couche .bin** en import, édition et export, hors ligne.
+- Pour les quatre : MIDI Learn local, moniteur, recherche, 50 presets locaux, import / export JSON.
+- Pas encore : l'écriture dans l'appareil (DUMP) ; aucun de ces quatre modèles n'a été testé sur du vrai matériel.
+
+### Access Virus — A, B, C, Classic, Rack, Rack XL
+
+![Éditeur Access Virus C : façade reconstruite et inspecteur de paramètre](/shots/ms-virus-c.jpg)
+
+- Six façades distinctes, reconstruites d'après la documentation.
+- Édition en direct d'une trentaine de paramètres vérifiés (oscillateurs, mixage, filtres, enveloppes, LFO, envoi d'effet), envoi armé explicitement.
+- **Lecture du buffer d'édition** (Single ou partie de Multi) par SysEx, avec contrôle de longueur et de checksum ; une réponse rejetée ne remplace jamais le brouillon. Nom du patch décodé.
+- MIDI Learn en réception, écran LCD qui affiche le dernier changement, presets locaux, librairie, historique de 100 étapes, verrouillage.
+- Pas encore : l'envoi d'un patch complet, l'écriture en banque, la matrice de modulation.
+
+### Novation Nova — Nova Desktop, Nova II Keyboard, Supernova, Supernova II
+
+![Éditeur Novation Supernova II](/shots/ms-supernova-2.jpg)
+
+- Quatre façades (desktop, clavier avec molettes, deux racks), vocodeur signalé sur la Nova.
+- Édition en direct d'environ 25 paramètres vérifiés en CC : oscillateurs, mixage, filtre, enveloppes, LFO, effets.
+- Mêmes outils que le Virus : Learn, moniteur, presets, librairie, historique, verrouillage.
+- Pas encore : la lecture de patch (aucune requête vérifiée, donc refusée), les NRPN groupés.
+
+### Roland JP — JP-8000 et JP-8080
+
+![Éditeur Roland JP-8000 : façade et clavier](/shots/ms-jp-8000.jpg)
+
+- Façade JP-8000 avec 40 commandes, calque de comparaison optionnel avec l'appareil d'origine ; façade rack séparée pour le JP-8080 avec ses paramètres de vocodeur.
+- Édition en direct d'environ 37 paramètres vérifiés, d'après les tables CC d'usine de Roland.
+- Choix du mode attendu sur le synthé (Mode 1 ou Mode 2) : les paramètres propres au Mode 2 ne partent pas en Mode 1.
+- Pas encore : la lecture et l'envoi de patchs.
+
+### FireworX Studio — TC Electronic FireworX
+
+- Chaîne d'effets en grille, matrice de modulation, coût DSP estimé.
+- Lecture et envoi du preset dans le buffer d'édition, banques, variations aléatoires.
+
+### Mx000 Studio — TC Electronic M3000 / M2000
+
+- Édition live du M3000 par SysEx : lecture, rappel, envoi du preset dans le buffer, mémoire utilisateur après confirmation.
+- Édition hors ligne du M2000, import / export de fichiers SysEx, copie d'un appareil à l'autre, curseur de modèle.
+
+### Panorama CS12 — Nektar (en développement)
+
+![Éditeur Panorama CS12 : carte personnelle, slots et contrôle sélectionné](/shots/ms-cs12-editor.jpg)
+
+- Éditeur de profils local : pages Surface, Bibliothèque et Connexions ; commandes, libellés, assignations, pages, cartes et modèles.
+- Import / export du profil JSON avec validation complète, sauvegarde dans l'espace de travail.
+- Pas encore : le dialogue avec le CS12 (entrées, moteur, LED, écran), l'intégration Cubase.
 
 ## 🆕 AI² Studio — Korg X5DR et toute la famille AI²
 
