@@ -6,7 +6,12 @@ export default defineConfig({
   title: 'TheLazyGeekGuy',
   cleanUrls: true,
   appearance: 'dark',
-  head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.svg' }],
+    // Écran d'ouverture : décidé avant le premier rendu (accueil seulement, ?intro=0 pour le passer,
+    // préférence mémorisée), pour que la page n'apparaisse pas avant lui.
+    ['script', {}, `try{var p=location.pathname;if(/^\\/(en\\/?)?$/.test(p)&&new URLSearchParams(location.search).get('intro')!=='0'&&localStorage.getItem('lazygeek.opening.v1')!=='0')document.documentElement.dataset.intro='1'}catch(e){}`],
+  ],
   locales: {
     root: {
       label: 'Français',

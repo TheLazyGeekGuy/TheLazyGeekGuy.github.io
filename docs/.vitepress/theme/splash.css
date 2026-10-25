@@ -1,0 +1,36 @@
+/* Écran d'ouverture (accueil) : charbon, un accent ambre et le point rouge du logo, comme l'ouverture de MIDI Studio. */
+html[data-intro="1"] { overflow: hidden; }
+html[data-intro="1"] body::before { content: ""; position: fixed; inset: 0; z-index: 2147482999; background: #101315; }
+.lg-opening { position: fixed; inset: 0; z-index: 2147483000; display: flex; align-items: center; justify-content: center; background: #101315; color: #eeeef0; font-family: Arial, Helvetica, sans-serif; isolation: isolate; overflow: hidden; opacity: 1; transition: opacity .6s ease; }
+.lg-leaving { opacity: 0; }
+.lg-brand { position: relative; z-index: 1; width: min(460px, 76vw); text-align: center; transform: translateY(-18px); animation: lg-brand-in .7s cubic-bezier(.2, .65, .3, 1) both; }
+.lg-brand img { position: relative; z-index: 1; display: block; width: 100%; height: auto; animation: lg-logo-breathe 2.6s ease-in-out infinite; }
+.lg-rule { position: relative; overflow: hidden; height: 1px; width: 144px; margin: 30px auto 22px; background: #30383b; animation: lg-rule-in .9s cubic-bezier(.2, .65, .3, 1) both; }
+.lg-rule::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 45%; background: linear-gradient(90deg, transparent, #fbbf24, #f43f5e, transparent); animation: lg-signal 1.8s linear infinite; }
+.lg-brand p { position: relative; z-index: 2; margin: 0; color: #a4aaa9; font-size: 13px; letter-spacing: .04em; }
+.lg-brand small { position: relative; z-index: 2; display: block; margin-top: 12px; color: #626b6e; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.lg-opening footer { position: absolute; z-index: 2; left: clamp(20px, 4vw, 64px); right: clamp(20px, 4vw, 64px); bottom: clamp(20px, 4vh, 44px); display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #252c2e; padding-top: 18px; }
+.lg-preference { display: flex; align-items: center; gap: 7px; color: #7f888b; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.lg-preference input { width: 13px; height: 13px; margin: 0; accent-color: #fbbf24; }
+.lg-skip { border: 0; background: transparent; color: #b9bfc0; padding: 6px 0; font: inherit; font-size: 12px; white-space: nowrap; cursor: pointer; }
+.lg-skip span { display: inline-block; margin-left: 12px; transition: transform .16s ease; }
+.lg-skip:hover { color: #eeeef0; }
+.lg-skip:hover span { transform: translateX(4px); }
+.lg-opening button:focus-visible, .lg-opening input:focus-visible { outline: 1px solid #fbbf24; outline-offset: 5px; }
+.lg-logo-field { position: relative; animation: lg-logo-flight 6.8s cubic-bezier(.45, 0, .55, 1) infinite; will-change: transform; }
+.lg-electron-scene { position: absolute; inset: 0; pointer-events: none; }
+.lg-energy { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.lg-orbit { fill: none; stroke: #fbbf24; stroke-width: .6; opacity: .065; }
+.lg-electron { position: absolute; inset: 0; opacity: 0; animation-timing-function: linear; animation-iteration-count: infinite; will-change: transform, opacity; }
+.lg-electron::after { content: ""; position: absolute; left: -3px; top: -3px; width: 6px; height: 6px; border-radius: 50%; background: #fff0cf; box-shadow: 0 0 0 3px #fbbf2424, 0 0 12px #fbbf2466; }
+.lg-core { position: absolute; left: 15.43605%; top: 60.9375%; width: 19.53488%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #f43f5ee6 0%, #f43f5e4d 40%, transparent 70%); opacity: .09; animation: lg-core-charge 2.6s ease-in-out infinite; will-change: transform, opacity; }
+.lg-opening[data-paused] *, .lg-opening[data-paused] *::after { animation-play-state: paused; }
+@keyframes lg-brand-in { from { opacity: 0; transform: translateY(-8px) scale(.98); } to { opacity: 1; transform: translateY(-18px) scale(1); } }
+@keyframes lg-logo-breathe { 0%, 100% { opacity: .86; } 50% { opacity: 1; } }
+@keyframes lg-signal { from { transform: translateX(-100%); } to { transform: translateX(325%); } }
+@keyframes lg-rule-in { from { opacity: 0; transform: scaleX(.2); } to { opacity: 1; transform: scaleX(1); } }
+@keyframes lg-logo-flight { 0%, 100% { transform: translate3d(-22px, 12px, 0) scale(.97) rotate(-.7deg); } 50% { transform: translate3d(24px, -16px, 0) scale(1.08) rotate(.7deg); } }
+@keyframes lg-core-charge { 0%, 100% { transform: translate(-50%, -50%) scale(.75); opacity: .05; } 50% { transform: translate(-50%, -50%) scale(1.4); opacity: .2; } }
+@keyframes lg-electron-fade { 0%, 94%, 100% { opacity: 0; } 10% { opacity: .8; } 76% { opacity: 1; } }
+@media (max-width: 540px) { .lg-opening footer { gap: 14px; } .lg-preference { font-size: 10px; } }
+@media (prefers-reduced-motion: reduce) { .lg-opening, .lg-skip span { transition: none; } .lg-brand, .lg-brand img, .lg-logo-field, .lg-rule, .lg-rule::after, .lg-core { animation: none; } .lg-logo-field { transform: none; } .lg-rule::after { left: 27.5%; } }
