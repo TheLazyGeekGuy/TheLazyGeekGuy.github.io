@@ -23,8 +23,9 @@ features:
     title: Plume
     details: Un traitement de texte qui s’utilise comme Word mais enregistre du Markdown propre, versionné avec Git. Écrit en Rust.
   - icon: 🏠
-    title: Prolyma & Domolyma
-    details: "Prolyma : devenir acteur de sa carrière plutôt que la subir. Domolyma : piloter efficacement son patrimoine immobilier. En préparation."
+    title: PLM · Personal Life Management
+    details: "Carrière, logement et santé : Prolyma, Domolyma et Sanolyma. La démo de Domolyma est accessible ; les autres projets se préparent."
+    link: /plm
   - icon: ⚙️
     title: Automatisation & DevOps
     details: CI/CD, conteneurs, Cloudflare Pages/Workers/R2, tests boîte noire. Si une tâche doit être faite deux fois, elle mérite un script.
@@ -32,7 +33,7 @@ features:
 
 ## En ce moment sur l’établi
 
-Les éditeurs MIDI Studio sont publics en alpha et utilisables dès aujourd’hui dans un navigateur Chromium. Le reste est en test ou en préparation : voici un avant-goût.
+Les éditeurs MIDI Studio sont publics en alpha et utilisables dès aujourd’hui dans un navigateur Chromium. Domolyma dispose aussi d’une démo publique sur données fictives. Les autres projets restent en test ou en préparation.
 
 ### 🎛️ MIDI Studio
 
@@ -42,7 +43,9 @@ Les éditeurs MIDI Studio sont publics en alpha et utilisables dès aujourd’hu
 
 <ProjectGrid family="Écriture" />
 
-### 🏠 Carrière & patrimoine
+### PLM · Personal Life Management
+
+[Découvrir la famille : Prolyma, Domolyma et Sanolyma →](/plm)
 
 <ProjectGrid family="Productivité" />
 

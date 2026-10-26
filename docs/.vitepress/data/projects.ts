@@ -15,6 +15,9 @@ export interface Project {
   shots?: string[]
   link?: string
   repo?: string
+  demo?: string
+  detail?: Bi
+  domain?: Bi
 }
 
 export const statusLabels: Record<Status, Bi> = {
@@ -84,6 +87,8 @@ export const projects: Project[] = [
   {
     slug: 'prolyma', name: 'Prolyma', accent: '#f59e0b', unit: 'PROLYMA',
     family: 'Productivité', status: 'preparing',
+    domain: { fr: 'Vie professionnelle', en: 'Working life' },
+    detail: { fr: '/plm#prolyma', en: '/en/plm#prolyma' },
     tagline: {
       fr: 'Soyez acteur de votre carrière plutôt que de la subir : gestion active de carrière pour celles et ceux qui travaillent.',
       en: 'Take charge of your career instead of enduring it: active career management for people who work.',
@@ -91,10 +96,25 @@ export const projects: Project[] = [
   },
   {
     slug: 'domolyma', name: 'Domolyma', accent: '#34d399', unit: 'DOMOLYMA',
-    family: 'Productivité', status: 'preparing',
+    family: 'Productivité', status: 'alpha',
+    domain: { fr: 'Logement & copropriété', en: 'Home & condominium' },
+    detail: { fr: '/plm#domolyma', en: '/en/plm#domolyma' },
     tagline: {
-      fr: 'Pilotage efficace de votre patrimoine immobilier : vos biens, suivis et gérés au même endroit.',
-      en: 'Efficient management of your real-estate portfolio: your properties, tracked and managed in one place.',
+      fr: 'Le dossier de vie de vos biens : copropriété, documents, interventions et décisions. Une démonstration publique sur données fictives.',
+      en: 'Your properties’ life records: condominium management, documents, maintenance and decisions. A public demo with fictional data.',
+    },
+    link: 'https://thelazygeekguy.github.io/domolyma/',
+    demo: 'https://thelazygeekguy.github.io/domolyma/demo/',
+    repo: 'https://github.com/TheLazyGeekGuy/domolyma',
+  },
+  {
+    slug: 'sanolyma', name: 'Sanolyma', accent: '#a78bfa', unit: 'SANOLYMA',
+    family: 'Productivité', status: 'preparing',
+    domain: { fr: 'Santé personnelle', en: 'Personal health' },
+    detail: { fr: '/plm#sanolyma', en: '/en/plm#sanolyma' },
+    tagline: {
+      fr: 'Un projet de carnet de santé personnel pour retrouver ses documents, sa chronologie et préparer ses rendez-vous. Présentation publique à venir.',
+      en: 'A personal health-record project to find documents, follow a timeline and prepare appointments. Public presentation to come.',
     },
   },
 ]

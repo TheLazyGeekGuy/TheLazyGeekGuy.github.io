@@ -17,7 +17,9 @@ A family of in-browser hardware editors sharing the same foundation: themes, lan
 
 <ProjectGrid family="Écriture" />
 
-## 🏠 Career & property
+## PLM · Personal Life Management
+
+[Three projects for career, home and health →](/en/plm)
 
 <ProjectGrid family="Productivité" />
 

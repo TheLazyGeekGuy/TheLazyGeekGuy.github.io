@@ -7,8 +7,8 @@ const props = defineProps<{ family?: string }>()
 const { lang } = useData()
 const L = computed<'fr' | 'en'>(() => (lang.value.startsWith('fr') ? 'fr' : 'en'))
 const t = computed(() => (L.value === 'fr'
-  ? { open: 'Ouvrir l’éditeur →', web: 'Essayer la version web →', code: 'Code', soon: 'NO SIGNAL · capture à venir', shot: 'Capture de' }
-  : { open: 'Open the editor →', web: 'Try the web version →', code: 'Code', soon: 'NO SIGNAL · screenshot coming soon', shot: 'Screenshot of' }))
+  ? { open: 'Ouvrir l’éditeur →', web: 'Essayer la version web →', code: 'Code', soon: 'NO SIGNAL · capture à venir', shot: 'Capture de', site: 'Le site', demo: 'Essayer la démo →', details: 'Le projet →' }
+  : { open: 'Open the editor →', web: 'Try the web version →', code: 'Code', soon: 'NO SIGNAL · screenshot coming soon', shot: 'Screenshot of', site: 'Website', demo: 'Try the demo →', details: 'About the project →' }))
 const by = (f: string) => projects.filter((p) => p.family === f)
 const show = (f: string) => !props.family || props.family === f
 const rack = computed(() => by('MIDI Studio'))
@@ -70,16 +70,19 @@ const style = (p: Project) => ({ '--accent': p.accent })
     </article>
   </div>
 
-  <!-- Gestion : duo -->
-  <div v-if="show('Productivité')" class="duo">
-    <article v-for="p in duo" :key="p.slug" class="tile" :style="style(p)">
-      <div class="window">
-        <div class="bar"><i /><i /><i /></div>
-        <div class="dash"><b /><b /><b /><u /><u /></div>
-      </div>
+  <!-- Life Management: editorial project summaries, without simulated screenshots. -->
+  <div v-if="show('Productivité')" class="life-projects">
+    <article v-for="(p, i) in duo" :key="p.slug" class="life-project" :style="style(p)">
+      <div class="life-domain"><span aria-hidden="true">0{{ i + 1 }}</span>{{ p.domain?.[L] }}</div>
       <span class="badge" :class="p.status">{{ statusLabels[p.status][L] }}</span>
       <h3>{{ p.name }}</h3>
       <p>{{ p.tagline[L] }}</p>
+      <div class="links">
+        <a v-if="p.demo" :href="p.demo">{{ t.demo }}</a>
+        <a v-if="p.detail" :href="p.detail[L]">{{ t.details }}</a>
+        <a v-if="p.link" :href="p.link">{{ t.site }}</a>
+        <a v-if="p.repo" :href="p.repo">{{ t.code }}</a>
+      </div>
     </article>
   </div>
 </template>
@@ -133,13 +136,16 @@ p { margin: 0; color: var(--vp-c-text-2); line-height: 1.55; font-size: .95rem; 
 .pitch { margin-top: 8px; padding-left: 14px; border-left: 3px solid var(--accent); color: var(--vp-c-text-1); }
 @media (max-width: 760px) { .sheet { grid-template-columns: 1fr; padding: 22px; } }
 
-/* ---- Duo ---- */
-.duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 24px 0; }
-.tile { padding: 26px; border-radius: 18px; border: 1px solid var(--vp-c-divider); background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 14%, var(--vp-c-bg-soft)), var(--vp-c-bg-soft) 60%); display: flex; flex-direction: column; gap: 6px; }
-.window { border: 1px dashed color-mix(in srgb, var(--accent) 50%, transparent); border-radius: 10px; margin-bottom: 14px; background: #0a0c11aa; overflow: hidden; }
-.bar { display: flex; gap: 6px; padding: 8px 10px; border-bottom: 1px solid #1d2230; } .bar i { width: 8px; height: 8px; border-radius: 50%; background: #2a3142; }
-.dash { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 12px; }
-.dash b { height: 44px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 22%, #151922); }
-.dash u { grid-column: span 3; height: 14px; border-radius: 4px; background: #171c27; } .dash u:last-child { width: 60%; }
-.tile .badge { align-self: flex-start; }
+/* ---- Life Management ---- */
+.life-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin: 32px 0; }
+.life-project { min-width: 0; padding: 22px 0; border-top: 2px solid var(--accent); display: flex; flex-direction: column; gap: 12px; }
+.life-domain { color: var(--vp-c-text-2); font-size: .78rem; display: flex; gap: 12px; }
+.life-domain span { font-family: var(--vp-font-family-mono); color: var(--accent); }
+.life-project .badge { align-self: flex-start; color: var(--vp-c-text-1); background: var(--vp-c-bg-soft); border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--vp-c-divider)); }
+.life-project h3 { margin: 0 !important; }
+.life-project .links { flex-wrap: wrap; gap: 10px 16px; margin-top: auto; padding-top: 12px; }
+.life-project .links a { color: var(--vp-c-text-1); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; transition: text-decoration-color .15s, transform .15s; }
+.life-project .links a:hover { transform: translateX(2px); text-decoration-color: var(--vp-c-text-1); }
+@media (max-width: 760px) { .life-projects { grid-template-columns: 1fr; gap: 10px; } }
+@media (prefers-reduced-motion: reduce) { .life-project .links a { transition: none; } .life-project .links a:hover { transform: none; } }
 </style>

@@ -17,7 +17,9 @@ Une famille d’éditeurs matériel dans le navigateur, partageant le même socl
 
 <ProjectGrid family="Écriture" />
 
-## 🏠 Carrière & patrimoine
+## PLM · Personal Life Management
+
+[Trois projets pour la carrière, le logement et la santé →](/plm)
 
 <ProjectGrid family="Productivité" />
 

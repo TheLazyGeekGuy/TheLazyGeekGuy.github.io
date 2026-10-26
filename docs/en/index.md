@@ -23,8 +23,9 @@ features:
     title: Plume
     details: A word processor that feels like Word but saves clean Markdown, versioned with Git. Written in Rust.
   - icon: 🏠
-    title: Prolyma & Domolyma
-    details: "Prolyma: take charge of your career instead of enduring it. Domolyma: manage your real-estate portfolio efficiently. In preparation."
+    title: PLM · Personal Life Management
+    details: "Career, home and health: Prolyma, Domolyma and Sanolyma. The Domolyma demo is available; the other projects are being prepared."
+    link: /en/plm
   - icon: ⚙️
     title: Automation & DevOps
     details: CI/CD, containers, Cloudflare Pages/Workers/R2, black-box testing. If a task has to be done twice, it deserves a script.
@@ -32,7 +33,7 @@ features:
 
 ## On the bench right now
 
-The MIDI Studio editors are public alphas you can use today in a Chromium browser. The rest is in testing or in preparation: here is a preview.
+The MIDI Studio editors are public alphas you can use today in a Chromium browser. Domolyma also has a public demo with fictional data. The other projects are still in testing or preparation.
 
 ### 🎛️ MIDI Studio
 
@@ -42,7 +43,9 @@ The MIDI Studio editors are public alphas you can use today in a Chromium browse
 
 <ProjectGrid family="Écriture" />
 
-### 🏠 Career & property
+### PLM · Personal Life Management
+
+[Explore the family: Prolyma, Domolyma and Sanolyma →](/en/plm)
 
 <ProjectGrid family="Productivité" />
 

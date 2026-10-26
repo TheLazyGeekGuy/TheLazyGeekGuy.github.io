@@ -12,7 +12,7 @@ export interface Repo {
 const USER = 'TheLazyGeekGuy'
 // Dépôts déjà présentés à la main, profil, ou à ne pas afficher.
 const EXCLUDE = new Set([
-  'bcr32-studio', 'fireworx-studio', 'Mx000-studio', 'plume',
+  'bcr32-studio', 'fireworx-studio', 'Mx000-studio', 'plume', 'domolyma',
   'TheLazyGeekGuy', 'TheLazyGeekGuy.github.io',
   // Masqués volontairement.
   'AIAudioForensics', 'DIY-Waves-Soundgrid-Server',
