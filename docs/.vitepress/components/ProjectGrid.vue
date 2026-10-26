@@ -78,10 +78,10 @@ const style = (p: Project) => ({ '--accent': p.accent })
       <h3>{{ p.name }}</h3>
       <p>{{ p.tagline[L] }}</p>
       <div class="links">
-        <a v-if="p.demo" :href="p.demo">{{ t.demo }}</a>
+        <a v-if="p.demo" :href="p.demo" target="_blank" rel="noopener">{{ t.demo }}</a>
         <a v-if="p.detail" :href="p.detail[L]">{{ t.details }}</a>
-        <a v-if="p.link" :href="p.link">{{ t.site }}</a>
-        <a v-if="p.repo" :href="p.repo">{{ t.code }}</a>
+        <a v-if="p.link" :href="p.link" target="_blank" rel="noopener">{{ t.site }}</a>
+        <a v-if="p.repo" :href="p.repo" target="_blank" rel="noopener">{{ t.code }}</a>
       </div>
     </article>
   </div>
